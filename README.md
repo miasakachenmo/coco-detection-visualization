@@ -1,29 +1,28 @@
-# coco_vis
+# COCO Detection Visualization
 
-This template should help get you started developing with Vue 3 in Vite.
+一个简单的基于VUE3和Elementui的交互式COCO输出可视化工具,支持框到标注和标注到框的双向选择. 后端使用python的flask库实现.
+![](./markdown_images/demo.jpg)
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
 
-## Customize configuration
+# 依赖:
+- Python 3
+- flask
+- flask-cors
+- opencv2
+- npm>6.0
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
 
+启动前端:
 ```sh
+#前端端口默认为3000
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
-
-### Compile and Minify for Production
-
+启动后端:
 ```sh
-npm run build
+#后端端口默认为5000
+python app.py
 ```
+如果后端端口有改动,需要在src/App.vue中修改backend_url,后续考虑加入配置功能.
