@@ -12,8 +12,22 @@
 - opencv2
 - npm>6.0
 
+# 数据准备
+1. 将需要可视化的json文件置于./jsons文件夹下,供后端自动识别
+2. 将图像文件软链接或者复制到./static/images/
 
+完成数据准备后的两个文件夹如下
+```
+-jsons/
+--json1.json
+--json2.json
+-static/
+--images/
+---1.jpg
+---2.jpg
+```
 
+# 运行
 启动前端:
 ```sh
 #前端端口默认为3000
