@@ -124,7 +124,7 @@ const app= {
         factor:1,
         catid_to_catname:{},
         annotation_color:"rgba(255,0,0,1)",
-        backend_url:"http://10.112.13.120:5000/"
+        backend_url:"http://127.0.0.1:5000/"
 
         // json_activate:{},
       }
