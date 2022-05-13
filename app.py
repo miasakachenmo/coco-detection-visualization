@@ -1,18 +1,27 @@
-from re import I
+# from re import I
 from flask import Flask, Response,render_template,jsonify,request,send_file,make_response
 from flask_cors import CORS, cross_origin
 import json
 import os
 import cv2
 import base64
+import sys
 # from mim import test
+
+if len(sys.argv)==1:
+    print("The test annotation file shoule be give as python app.py <path>, using default ../data/test/annotations/instances_val2017.json")
+    test_annotation_path="../data/test/annotations/instances_val2017.json"
+else:
+    test_annotation_path=sys.argv[1]
+
 app = Flask(__name__)
 
 cors = CORS(app)
 #这里定义数据集
 
+
 images_path="static/images/"
-with open("../data/test/annotations/instances_val2017.json","r") as f:
+with open(test_annotation_path,"r") as f:
     _=json.load(f)
     test_images=_['images']
     categories=_['categories']
@@ -70,8 +79,7 @@ def get_img():
     return make_response(img_dict
         # attachment_filename='result.jpg'
     )
-
-
+    # return jsonify(data[name]['imgid_to_annos'][int(img_id)])
 
 @app.route("/")
 def hello_world():
